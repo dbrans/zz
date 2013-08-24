@@ -14,14 +14,7 @@ var Later = function(f) {
           resolves.forEach(function(f) {
             f(val);
           });
-        } catch(e) {
-          return subpromises.forEach(function(p) {
-            p.reject && p.reject(e);
-          });
-        }
-        subpromises.forEach(function(p) {
-          p.resolve && p.resolve(val);
-        });
+        } catch(e) {}
       });
     }
   };
@@ -30,17 +23,8 @@ var Later = function(f) {
       promise.value = val;
       promise.state = 'rejected';
       setTimeout(function() {
-        try {
-          rejects.forEach(function(f) {
-            f(val);
-          });
-        } catch(e) {
-          return subpromises.forEach(function(p) {
-            p.reject && p.reject(e);
-          });
-        }
-        subpromises.forEach(function(p) {
-          p.resolve && p.resolve(val);
+        rejects.forEach(function(f) {
+          f(val);
         });
       });
     }
@@ -56,15 +40,9 @@ var Later = function(f) {
       if (typeof(reject) == 'function') {
         rejects.push(reject);
       }
-      var subpromise = {
-        then: function(resolve, reject) {
-          this.resolve = resolve;
-          this.reject = reject;
-        }
-      };
+      return Later(function(resolve, reject) {
 
-      subpromises.push(subpromise);
-      return subpromise;
+      });
     },
     state: 'pending',
     value: undefined
