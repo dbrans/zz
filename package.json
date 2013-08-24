@@ -1,0 +1,22 @@
+{
+  "name": "iou",
+  "version": "0.0.0",
+  "description": "TBA",
+  "main": "later.js",
+  "scripts": {
+    "test": "foo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbrans/iou"
+  },
+  "keywords": [
+    "foo"
+  ],
+  "author": "Derek Brans <dbrans@gmail.com>",
+  "license": "BSD",
+  "gitHead": "1cf64908ca1e32a8917f140adf8ae335c1dbf522",
+  "bugs": {
+    "url": "https://github.com/dbrans/iou/issues"
+  }
+}
