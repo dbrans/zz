@@ -1,7 +1,8 @@
 
 
 isFunction = (x) -> typeof(x) is "function"
-isPromise = (x) -> x.constructor is Promise
+
+isThenable = (x) -> isFunction x?.then
 
 class Branch
   constructor: (@onFulfilled, @onRejected) ->
@@ -14,7 +15,6 @@ class Branch
         nextValue = @onFulfilled value
       catch reason
         return @promise.reject reason
-
 
     @promise.resolve nextValue
 
@@ -39,8 +39,11 @@ class Promise
     @state = 'pending'
     impl?(@resolve, @reject)
 
-  resolve: (val) =>
-    @fulfill val
+  resolve: (x) =>
+    if isThenable x
+      x.then @resolve, @reject
+    else
+      @fulfill x
 
   fulfill: (value) =>
     if @state is 'pending'
