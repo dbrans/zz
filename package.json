@@ -1,14 +1,11 @@
 {
-  "name": "iou",
+  "name": "zz",
   "version": "0.0.0",
   "description": "TBA",
-  "main": "later.js",
-  "scripts": {
-    "test": "foo"
-  },
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbrans/iou"
+    "url": "https://github.com/dbrans/promisejs"
   },
   "keywords": [
     "foo"
@@ -17,6 +14,6 @@
   "license": "BSD",
   "gitHead": "1cf64908ca1e32a8917f140adf8ae335c1dbf522",
   "bugs": {
-    "url": "https://github.com/dbrans/iou/issues"
+    "url": "https://github.com/dbrans/promisejs/issues"
   }
 }
