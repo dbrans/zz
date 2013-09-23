@@ -1,11 +1,11 @@
 {
   "name": "zz",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "TBA",
-  "main": "index.js",
+  "main": "lib/index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbrans/promisejs"
+    "url": "https://github.com/dbrans/zz"
   },
   "keywords": [
     "foo"
@@ -14,6 +14,6 @@
   "license": "BSD",
   "gitHead": "1cf64908ca1e32a8917f140adf8ae335c1dbf522",
   "bugs": {
-    "url": "https://github.com/dbrans/promisejs/issues"
+    "url": "https://github.com/dbrans/zz/issues"
   }
 }
